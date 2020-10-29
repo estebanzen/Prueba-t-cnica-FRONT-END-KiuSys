@@ -4,14 +4,34 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Toast from "react-bootstrap/Toast";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 import "./App.css";
+import Hello from "./Hello";
+import List from "./List";
 
 const ExampleToast = ({ children }) => {
 	const [show, toggleShow] = useState(true);
 
 	return (
 		<div>
+			<List></List>
+			<Modal.Dialog>
+				<Modal.Header closeButton>
+					<Modal.Title>Modal title</Modal.Title>
+				</Modal.Header>
+
+				<Modal.Body>
+					<p>Modal body text goes here.</p>
+					<Hello name="si"></Hello>
+				</Modal.Body>
+
+				<Modal.Footer>
+					<Button variant="secondary">Close</Button>
+					<Button variant="primary">Save changes</Button>
+				</Modal.Footer>
+			</Modal.Dialog>
+
 			{!show && (
 				<Button onClick={() => toggleShow(true)}>Show Toast</Button>
 			)}
