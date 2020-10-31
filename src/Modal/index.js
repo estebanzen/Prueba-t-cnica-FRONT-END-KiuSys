@@ -59,9 +59,9 @@ export function ModalComponent(props) {
 					<Button variant="secondary" onClick={handleClose}>
 						Cerrar
 					</Button>
-					<Button variant="primary" onClick={handleClose}>
+					{/* <Button variant="primary" onClick={handleClose}>
 						Save Changes
-					</Button>
+					</Button> */}
 				</Modal.Footer>
 			</Modal>
 		</>
