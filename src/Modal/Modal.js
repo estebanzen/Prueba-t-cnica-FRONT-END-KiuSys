@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import PrintJson from "../PrintJson";
+// import PrintJson from "../PrintJson";
 import "./Modal.css";
 
 export function ModalComponent(props) {
@@ -18,9 +18,14 @@ export function ModalComponent(props) {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	const handleImageLoaded = () => console.log("handleImageLoaded()");
+	const handleImageThumbnailLoaded = () =>
+		console.log("handleImageThumbnailLoaded()");
+
 	return (
 		<>
 			<img
+				onLoad={handleImageThumbnailLoaded()}
 				className="thumbnail"
 				onClick={handleShow}
 				style={{
@@ -46,6 +51,7 @@ export function ModalComponent(props) {
 				>
 					<img
 						className="thumbnail"
+						onLoad={handleImageLoaded()}
 						onClick={handleShow}
 						style={{
 							width: "100%",
@@ -59,9 +65,6 @@ export function ModalComponent(props) {
 					<Button variant="secondary" onClick={handleClose}>
 						Cerrar
 					</Button>
-					{/* <Button variant="primary" onClick={handleClose}>
-						Save Changes
-					</Button> */}
 				</Modal.Footer>
 			</Modal>
 		</>
