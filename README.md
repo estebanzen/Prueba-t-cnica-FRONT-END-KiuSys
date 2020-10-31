@@ -1,3 +1,9 @@
+# TECNOLOGIAS
+
+-   [React Bootstrap](https://react-bootstrap.github.io/ "React Bootstrap")
+-   [Axios](https://www.npmjs.com/package/axios "Axios")
+-   [React](https://reactjs.org/ "React")
+
 # Prueba técnica FRONT-END KiuSys
 
 ## CONSIGNA

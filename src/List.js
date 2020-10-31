@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import axios from "axios";
+import { ModalComponent } from "./Modal/";
 
 class List extends Component {
 	state = {
-		coso: [],
+		album: [],
 	};
 
 	constructor(props) {
@@ -12,40 +17,52 @@ class List extends Component {
 	}
 
 	componentDidMount() {
-		axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
-			const coso = res.data;
-			this.setState({ coso });
-		});
+		axios
+			.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+			.then((res) => {
+				const album = res.data;
+				this.setState({ album });
+			});
 	}
 
 	handleUserAdded(userObject) {
-		const newUsers = [...this.state.coso];
+		const newUsers = [...this.state.album];
 		newUsers.push(userObject);
 
-		this.setState({ coso: newUsers });
+		this.setState({ album: newUsers });
 	}
 
 	render() {
-		console.log(this.state.coso);
+		console.log(this.state.album);
 
-		if (this.state.coso.length === 0) {
+		if (this.state.album.length === 0) {
 			return (
 				<div>
-					<p>Loading...</p>
+					<Spinner animation="border" />
 				</div>
 			);
 		}
+
 		return (
 			<div>
-				<ul>
-					{this.state.coso.map((user) => {
-						return (
-							<li key={user.id}>
-								{user.name} (ID: {user.id})
-							</li>
-						);
-					})}
-				</ul>
+				<Container>
+					<Row>
+						{this.state.album.map((obj) => {
+							return (
+								<Col
+									lg="2"
+									sm="3"
+									md="4"
+									xs="6"
+									key={obj.id}
+									draggable="true"
+								>
+									<ModalComponent obj={obj}></ModalComponent>
+								</Col>
+							);
+						})}
+					</Row>
+				</Container>
 			</div>
 		);
 	}
