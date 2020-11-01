@@ -18,14 +18,14 @@ export function ModalComponent(props) {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-	const handleImageLoaded = () => console.log("handleImageLoaded()");
-	const handleImageThumbnailLoaded = () =>
-		console.log("handleImageThumbnailLoaded()");
+	// const handleImageLoaded = () => console.log("handleImageLoaded()");
+	// const handleImageThumbnailLoaded = () =>
+	// 	console.log("handleImageThumbnailLoaded()");
 
 	return (
 		<>
 			<img
-				onLoad={handleImageThumbnailLoaded()}
+				// onLoad={handleImageThumbnailLoaded()}
 				className="thumbnail"
 				onClick={handleShow}
 				style={{
@@ -51,7 +51,7 @@ export function ModalComponent(props) {
 				>
 					<img
 						className="thumbnail"
-						onLoad={handleImageLoaded()}
+						// onLoad={handleImageLoaded()}
 						onClick={handleShow}
 						style={{
 							width: "100%",

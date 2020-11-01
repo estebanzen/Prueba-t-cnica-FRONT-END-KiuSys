@@ -3,18 +3,18 @@ import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import axios from "axios";
-import { ModalComponent } from "./Modal/Modal";
+import { ModalComponent } from "../Modal/Modal";
+import { ArrowsMove } from "react-bootstrap-icons";
+import "./List.css";
 
 class List extends Component {
 	state = {
 		album: [],
 	};
-
-	constructor(props) {
-		super(props);
-		this.handleUserAdded = this.handleUserAdded.bind(this);
-	}
 
 	componentDidMount() {
 		axios
@@ -23,13 +23,6 @@ class List extends Component {
 				const album = res.data;
 				this.setState({ album });
 			});
-	}
-
-	handleUserAdded(userObject) {
-		const newUsers = [...this.state.album];
-		newUsers.push(userObject);
-
-		this.setState({ album: newUsers });
 	}
 
 	render() {
@@ -46,7 +39,7 @@ class List extends Component {
 		return (
 			<div>
 				<Container>
-					<Row>
+					<Row style={{ margin: "0 -30px -55px -30px" }}>
 						{this.state.album.map((obj) => {
 							return (
 								<Col
@@ -58,6 +51,15 @@ class List extends Component {
 									draggable="true"
 								>
 									<ModalComponent obj={obj}></ModalComponent>
+									<OverlayTrigger
+										overlay={
+											<Tooltip>Ordenar elemento</Tooltip>
+										}
+									>
+										<Button className="move-btn">
+											<ArrowsMove />
+										</Button>
+									</OverlayTrigger>
 								</Col>
 							);
 						})}

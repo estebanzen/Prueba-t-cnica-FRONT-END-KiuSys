@@ -1,6 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Container from "react-bootstrap/Container";
 
 export function Header() {
 	return (
@@ -12,49 +13,57 @@ export function Header() {
 				bg="dark"
 				variant="dark"
 			>
-				<Navbar.Brand href="#home">
-					Prueba técnica FRONT-END KiuSys
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="mr-auto">
-						<Nav.Link
-							href="https://www.linkedin.com/in/estebanzen/"
-							target="_blank"
-						>
-							Linkedin @estebanzen
-						</Nav.Link>
-						<Nav.Link
-							href="https://github.com/estebanzen/prueba-tecnica-front-end-kiusys"
-							target="_blank"
-						>
-							GitHub Repo
-						</Nav.Link>
-						<NavDropdown
-							title="Dependencias"
-							id="collasible-nav-dropdown"
-						>
-							<NavDropdown.Item
+				<Container>
+					<Navbar.Brand href="#home">
+						Prueba técnica FRONT-END KiuSys
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+					<Navbar.Collapse id="responsive-navbar-nav">
+						<Nav className="mr-auto">
+							<Nav.Link
+								href="https://www.linkedin.com/in/estebanzen/"
 								target="_blank"
-								href="https://react-bootstrap.github.io/"
 							>
-								React Bootstrap
-							</NavDropdown.Item>
-							<NavDropdown.Item
+								Linkedin @estebanzen
+							</Nav.Link>
+							<Nav.Link
+								href="https://github.com/estebanzen/prueba-tecnica-front-end-kiusys"
 								target="_blank"
-								href="https://www.npmjs.com/package/axios/"
 							>
-								Axios
-							</NavDropdown.Item>
-							<NavDropdown.Item
-								target="_blank"
-								href="https://reactjs.org/"
+								GitHub Repo
+							</Nav.Link>
+							<NavDropdown
+								title="Dependencias"
+								id="collasible-nav-dropdown"
 							>
-								React
-							</NavDropdown.Item>
-						</NavDropdown>
-					</Nav>
-				</Navbar.Collapse>
+								<NavDropdown.Item
+									target="_blank"
+									href="https://reactjs.org/"
+								>
+									React
+								</NavDropdown.Item>
+								<NavDropdown.Item
+									target="_blank"
+									href="https://react-bootstrap.github.io/"
+								>
+									React Bootstrap
+								</NavDropdown.Item>
+								<NavDropdown.Item
+									target="_blank"
+									href="https://www.npmjs.com/package/react-bootstrap-icons"
+								>
+									React Bootstrap Icons
+								</NavDropdown.Item>
+								<NavDropdown.Item
+									target="_blank"
+									href="https://www.npmjs.com/package/axios/"
+								>
+									Axios
+								</NavDropdown.Item>
+							</NavDropdown>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
 			</Navbar>
 		</>
 	);
