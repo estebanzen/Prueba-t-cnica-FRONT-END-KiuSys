@@ -23,7 +23,11 @@ export function Listado() {
 			.get("https://jsonplaceholder.typicode.com/photos?albumId=1")
 			.then((res) => {
 				const album = res.data;
+
 				// TODO: ordear array
+				// const sortarr = album.sort((a, b) =>
+				// 	a.title > b.title ? 1 : -1
+				// );
 				setItems({
 					arr_album: album,
 				});
