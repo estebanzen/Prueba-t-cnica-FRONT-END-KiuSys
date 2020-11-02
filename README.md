@@ -33,3 +33,23 @@ Esteban Zenzerovich. [Linkedin @EstebanZen ](https://www.linkedin.com/in/esteban
 ## API
 
 [https://jsonplaceholder.typicode.com/photos?albumId=1](https://jsonplaceholder.typicode.com/photos?albumId=1 "https://jsonplaceholder.typicode.com/photos?albumId=1")
+
+---
+
+## INSTRUCCIONES PARA CORRER LA DEMO
+
+### INSTALACION
+
+> npm install
+
+### CORRER DEMO
+
+> npm run start
+
+## AUTOR
+
+Esteban Zenzerovich
+
+### LINKEDIN
+
+[https://www.linkedin.com/in/estebanzen/](https://www.linkedin.com/in/estebanzen/ "https://www.linkedin.com/in/estebanzen/")

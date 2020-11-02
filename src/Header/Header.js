@@ -2,7 +2,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 
 export function Header() {
 	return (
@@ -54,21 +53,12 @@ export function Header() {
 								href="https://github.com/estebanzen/prueba-tecnica-front-end-kiusys"
 								target="_blank"
 							>
-								GitHub Repo
+								Repositorio GitHub
 							</Nav.Link>
 							<Nav.Link
 								href="https://www.linkedin.com/in/estebanzen/"
 								target="_blank"
 							>
-								<Image
-									href="https://www.linkedin.com/in/estebanzen/"
-									style={{
-										width: "25px",
-										marginRight: "15px",
-									}}
-									roundedCircle
-									src="https://media-exp1.licdn.com/dms/image/C4E35AQFBzB93WgukyQ/profile-framedphoto-shrink_200_200/0?e=1604260800&v=beta&t=FBXrtx7dwQe53VQTLKHZ8oZyKHTanxGmwSGM0o8Vrck"
-								/>
 								Autor: Esteban Zenzerovich
 							</Nav.Link>
 						</Nav>
