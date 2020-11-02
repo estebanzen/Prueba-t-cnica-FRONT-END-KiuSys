@@ -59,7 +59,7 @@ export function List() {
 
 	return (
 		<GridContextProvider onChange={onChange}>
-			<div className="container">
+			<div className="container-list">
 				<GridDropZone
 					className="dropzone arr_album"
 					id="arr_album"
