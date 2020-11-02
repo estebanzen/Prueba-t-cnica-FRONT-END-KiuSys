@@ -2,15 +2,11 @@
 	display: flex;
 	touch-action: none;
 	width: 800px;
-	/* margin: 100px auto; */
 }
 
 .dropzone {
 	flex: 1;
 	min-height: 400px;
-	/* height: 400px; */
-	/* border: 1px solid rgba(0, 0, 0, 0.1); */
-	/* border-radius: 1rem; */
 }
 
 .dropzone.left {
@@ -25,16 +21,12 @@
 }
 
 .grid-item-content {
-	/* width: 50px;*/
-	/* height: 300px; */
 	box-sizing: border-box;
-	/* background: #08e; */
 	display: flex;
 	justify-content: center;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
 	align-items: center;
-	/* border-radius: 50%; */
 }
 .move-btn {
 	position: absolute;

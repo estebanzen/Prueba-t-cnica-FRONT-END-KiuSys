@@ -15,28 +15,18 @@ import Button from "react-bootstrap/Button";
 
 export function Listado() {
 	const [items, setItems] = React.useState({
-		left: [
-			// { id: 1, name: "ben" },
-			// { id: 2, name: "joe" },
-			// { id: 3, name: "jason" },
-			// { id: 4, name: "chris" },
-			// { id: 5, name: "heather" },
-			// { id: 6, name: "Richard" },
-		],
+		arr_album: [],
 	});
 
 	useEffect(() => {
 		axios
 			.get("https://jsonplaceholder.typicode.com/photos?albumId=1")
 			.then((res) => {
-				// setPosts(res.data.slice(0, 10));
 				const album = res.data;
-				// debugger;
 				// TODO: ordear array
 				setItems({
-					left: album,
+					arr_album: album,
 				});
-				// setItems({ album });
 				console.log(res);
 			});
 	}, []);
@@ -67,21 +57,16 @@ export function Listado() {
 		<GridContextProvider onChange={onChange}>
 			<div className="container">
 				<GridDropZone
-					className="dropzone left"
-					id="left"
+					className="dropzone arr_album"
+					id="arr_album"
 					boxesPerRow={4}
 					rowHeight={270}
 				>
-					{items.left.map((item) => (
+					{items.arr_album.map((item) => (
 						<GridItem key={item.id}>
 							<div className="grid-item">
 								<div className="grid-item-content">
-									{/* {item.name[0]} */}
 									<ModalComponent obj={item}></ModalComponent>
-
-									{/* {JSON.stringify(item)} */}
-									{/* {item.name[0].toUpperCase()} */}
-
 									<Button className="move-btn">
 										<ArrowsMove />
 									</Button>

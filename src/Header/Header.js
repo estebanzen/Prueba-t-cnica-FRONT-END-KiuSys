@@ -60,7 +60,6 @@ export function Header() {
 								href="https://www.linkedin.com/in/estebanzen/"
 								target="_blank"
 							>
-								{/* Linkedin @estebanzen */}
 								<Image
 									href="https://www.linkedin.com/in/estebanzen/"
 									style={{
