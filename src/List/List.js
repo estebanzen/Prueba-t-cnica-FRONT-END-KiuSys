@@ -9,11 +9,11 @@ import {
 	swap,
 	move,
 } from "react-grid-dnd";
-import "./Listado.css";
+import "./List.css";
 import { ArrowsMove } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 
-export function Listado() {
+export function List() {
 	const [items, setItems] = React.useState({
 		arr_album: [],
 	});
