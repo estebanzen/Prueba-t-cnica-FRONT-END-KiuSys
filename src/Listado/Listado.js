@@ -1,5 +1,7 @@
-import React from "react";
-// import ReactDOM from "react-dom";
+import React, { useEffect } from "react";
+import axios from "axios";
+import { ModalComponent } from "../Modal/Modal";
+
 import {
 	GridContextProvider,
 	GridDropZone,
@@ -8,18 +10,36 @@ import {
 	move,
 } from "react-grid-dnd";
 import "./Listado.css";
+import { ArrowsMove } from "react-bootstrap-icons";
+import Button from "react-bootstrap/Button";
 
 export function Listado() {
 	const [items, setItems] = React.useState({
 		left: [
-			{ id: 1, name: "ben" },
-			{ id: 2, name: "joe" },
-			{ id: 3, name: "jason" },
-			{ id: 4, name: "chris" },
-			{ id: 5, name: "heather" },
-			{ id: 6, name: "Richard" },
+			// { id: 1, name: "ben" },
+			// { id: 2, name: "joe" },
+			// { id: 3, name: "jason" },
+			// { id: 4, name: "chris" },
+			// { id: 5, name: "heather" },
+			// { id: 6, name: "Richard" },
 		],
 	});
+
+	useEffect(() => {
+		axios
+			.get("https://jsonplaceholder.typicode.com/photos?albumId=1")
+			.then((res) => {
+				// setPosts(res.data.slice(0, 10));
+				const album = res.data;
+				// debugger;
+				// TODO: ordear array
+				setItems({
+					left: album,
+				});
+				// setItems({ album });
+				console.log(res);
+			});
+	}, []);
 
 	function onChange(sourceId, sourceIndex, targetIndex, targetId) {
 		if (targetId) {
@@ -50,13 +70,21 @@ export function Listado() {
 					className="dropzone left"
 					id="left"
 					boxesPerRow={4}
-					rowHeight={70}
+					rowHeight={270}
 				>
 					{items.left.map((item) => (
-						<GridItem key={item.name}>
+						<GridItem key={item.id}>
 							<div className="grid-item">
 								<div className="grid-item-content">
-									{item.name[0].toUpperCase()}
+									{/* {item.name[0]} */}
+									<ModalComponent obj={item}></ModalComponent>
+
+									{/* {JSON.stringify(item)} */}
+									{/* {item.name[0].toUpperCase()} */}
+
+									<Button className="move-btn">
+										<ArrowsMove />
+									</Button>
 								</div>
 							</div>
 						</GridItem>
