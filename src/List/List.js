@@ -21,6 +21,7 @@ class List extends Component {
 			.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
 			.then((res) => {
 				const album = res.data;
+				// TODO: ordear array
 				this.setState({ album });
 			});
 	}
@@ -31,7 +32,7 @@ class List extends Component {
 		if (this.state.album.length === 0) {
 			return (
 				<div>
-					<Spinner animation="border" />
+					<Spinner className="spinner" animation="border" />
 				</div>
 			);
 		}
@@ -39,7 +40,7 @@ class List extends Component {
 		return (
 			<div>
 				<Container>
-					<Row style={{ margin: "0 -30px -55px -30px" }}>
+					<Row className="row-container">
 						{this.state.album.map((obj) => {
 							return (
 								<Col
